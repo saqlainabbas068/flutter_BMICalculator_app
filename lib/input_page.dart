@@ -42,7 +42,8 @@ class _InputPageState extends State<InputPage> {
 } Sary code ki jaja tarnarye operator use kia ha
 */
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR' ),
@@ -122,6 +123,26 @@ class _InputPageState extends State<InputPage> {
           children: <Widget>[
           Expanded(child: new RepeatContainerCode(
             colors: Color(0xFF1D1E33),
+            cardWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text
+                  (
+                    'WEIGHT',style: kLabelStyle
+                ),
+                Text(
+                    sliderWeight.toString(),
+                    style: kNumberStyle
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget>
+                  [
+
+                  ],
+                )
+              ],
+            ),
           ),
           ),
 
