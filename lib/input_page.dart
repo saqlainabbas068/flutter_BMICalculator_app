@@ -13,14 +13,18 @@ enum Gender
 }
 
 
-class InputPage extends StatefulWidget {
+class InputPage extends StatefulWidget
+{
   @override
   _InputPageState createState() => _InputPageState();
 }
-Color maleColor = deactiveColor;
-Color femaleColor = deactiveColor;
+
 class _InputPageState extends State<InputPage> {
-void updateColor(Gender genderType)
+ Gender selectGender;
+  /*
+ Color maleColor = deactiveColor;
+  Color femaleColor = deactiveColor;
+  void updateColor(Gender genderType)
 {
   if(genderType == Gender.male)
     {
@@ -32,7 +36,8 @@ void updateColor(Gender genderType)
     femaleColor = activeColor;
     maleColor = deactiveColor;
   }
-}
+} Sary code ki jaja tarnarye operator use kia ha
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,11 +52,11 @@ void updateColor(Gender genderType)
               child: GestureDetector(
                 onTap: (){
                   setState(() {
-                    updateColor(Gender.male);
+                   selectGender=Gender.male;
                   });
                   },
                 child: RepeatContainerCode(
-                  colors: maleColor,
+                  colors: selectGender==Gender.male?activeColor:deactiveColor,
                   cardWidget: RepeatTextAndIconWidget(
                   iconData:FontAwesomeIcons.male,
                   label: "MALE",
@@ -64,11 +69,11 @@ void updateColor(Gender genderType)
                 child: GestureDetector(
                   onTap: (){
                     setState(() {
-                      updateColor(Gender.female);
+                      selectGender=Gender.female;
                     });
                   },
                   child: RepeatContainerCode(
-                    colors: femaleColor,
+                    colors:selectGender==Gender.female?activeColor:deactiveColor,
                     cardWidget: RepeatTextAndIconWidget(
                     iconData:FontAwesomeIcons.female,
                     label: "FEMALE",
