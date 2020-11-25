@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_lecture55/ConstantFile.dart';
+import 'ConstantFile.dart';
+
 
 class RepeatTextAndIconWidget extends StatelessWidget {
   RepeatTextAndIconWidget({@required this.iconData, this.label});
 
   final IconData iconData;
   final String label;
-
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +16,14 @@ class RepeatTextAndIconWidget extends StatelessWidget {
       children: <Widget>[
         Icon(
           iconData,
-          size: 80.0,
+          size: 85.0,
         ),
         SizedBox(
           height: 15.0,
         ),
         Text(
           label,
-          style: TextStyle(
-            fontSize: 18.0,
-
-          ),
+          style:kLabelStyle,
         ),
       ],
     );
