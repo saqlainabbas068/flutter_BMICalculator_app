@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app_lecture55/ConstantFile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'IconTextFile.dart';
 import 'ContainerFile.dart';
 import 'ConstantFile.dart';
+import 'Resultfile.dart';
 
 enum Gender
 {
@@ -69,7 +71,7 @@ class _InputPageState extends State<InputPage> {
                 ),
 
             ),
-            Expanded(
+             Expanded(
                   child: RepeatContainerCode(
                     onPressed: (){
                       setState(() {
@@ -204,11 +206,22 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
         ),
-        Container(
-          color: Color(0xFFEB1555),
-          margin: EdgeInsets.only(top:10.0),
-          width: double.infinity,
-          height: 80.0,
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultScreen));
+          },
+          child: Container(
+            child: Center(
+              child: Text(
+                  'Calculate',
+                  style: kLargeButtonStyele,
+              ),
+            ),
+            color: Color(0xFFEB1555),
+            margin: EdgeInsets.only(top:10.0),
+            width: double.infinity,
+            height: 80.0,
+          ),
         ),
         ],
       ),
